@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #fcefee;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.bg-overlay {
+  background: url('images/background.jpg') no-repeat center center/cover;
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: -1;
+  opacity: 0.3;
+  filter: blur(2px);
+}
+
+.container {
+  text-align: center;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.top-img {
+  width: 120px;
+  margin-bottom: 15px;
+}
+
+.bottom-img {
+  width: 150px;
+  margin-top: 25px;
+}
+
+.message-box h1 {
+  font-size: 2rem;
+  color: #fff;
+}
+
+.typing-text {
+  width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid white;
+  animation: typing 4s steps(30) forwards, blink 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  from, to { border-color: transparent; }
+  50% { border-color: white; }
+}
+
+.fade-in {
+  color: #fff;
+  font-size: 1.2rem;
+  margin-top: 20px;
+  opacity: 0;
+  animation: fadeIn 3s ease forwards;
+  animation-delay: 4.5s;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+button {
+  margin-top: 25px;
+  padding: 12px 24px;
+  font-size: 1rem;
+  background: #ff6f91;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+button:hover {
+  background: #ff4e70;
+  transform: scale(1.1);
+}
+
+.heart {
+  font-size: 4rem;
+  position: absolute;
+  bottom: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: bottom 1s ease, opacity 1s ease;
+}
