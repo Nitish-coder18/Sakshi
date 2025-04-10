@@ -3,23 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Just For You 💖</title>
+  <title>Hey [HerName]! 💖</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="bg-overlay"></div>
-  
   <div class="container">
-    <img src="images/teddy.png" alt="Cute Teddy" class="top-img" />
-    
-    <div class="message-box">
-      <h1 class="typing-text">Hey... I have something to say 💬</h1>
-      <p class="fade-in">Would you like to be my friend? 😊</p>
-      <button id="friendBtn">Yes, I'd love to! 💖</button>
+    <h1 class="typing">Hey [HerName] 💕</h1>
+    <p class="subtext">I’ve been meaning to ask you something really special...</p>
+
+    <div class="teddy"></div>
+
+    <div class="question">
+      <h2>Will you be my friend? 🥹</h2>
+      <div class="buttons">
+        <button id="yesBtn">Yes 😍</button>
+        <button id="noBtn">No 🙈</button>
+      </div>
     </div>
 
-    <img src="images/friends.png" alt="Friends Forever" class="bottom-img"/>
-    <div class="heart" id="heart">💝</div>
+    <div class="hearts" id="hearts"></div>
   </div>
 
   <script src="script.js"></script>
