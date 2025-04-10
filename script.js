@@ -2,22 +2,39 @@ const noBtn = document.getElementById('noBtn');
 const yesBtn = document.getElementById('yesBtn');
 const heartsContainer = document.getElementById('hearts');
 
-// No button moves randomly on click
+// NO Button click => small shift within center area
 noBtn.addEventListener('click', () => {
-  const x = Math.random() * (window.innerWidth - 100);
-  const y = Math.random() * (window.innerHeight - 50);
-  noBtn.style.left = `${x}px`;
-  noBtn.style.top = `${y}px`;
+  const container = document.querySelector('.container');
+  const btnRect = noBtn.getBoundingClientRect();
+  const containerRect = container.getBoundingClientRect();
+
+  // Small range movement within the container
+  const offsetX = Math.random() * 60 - 30;  // -30 to +30 px
+  const offsetY = Math.random() * 60 - 30;
+
+  let newX = noBtn.offsetLeft + offsetX;
+  let newY = noBtn.offsetTop + offsetY;
+
+  // Restrict inside container
+  newX = Math.max(0, Math.min(container.clientWidth - noBtn.clientWidth, newX));
+  newY = Math.max(0, Math.min(container.clientHeight - noBtn.clientHeight, newY));
+
+  noBtn.style.position = 'absolute';
+  noBtn.style.left = `${newX}px`;
+  noBtn.style.top = `${newY}px`;
 });
 
-// Yes button creates heart animation
-yesBtn.addEventListener('click', () => {
-  for(let i = 0; i < 20; i++) {
+// YES Button (same as before)
+yesBtn.addEventListener('click', (e) => {
+  const x = e.clientX;
+  const y = e.clientY;
+
+  for (let i = 0; i < 20; i++) {
     const heart = document.createElement("div");
     heart.innerText = "💖";
-    heart.style.position = "absolute";
-    heart.style.left = `${Math.random() * 100}%`;
-    heart.style.top = `100%`;
+    heart.style.position = "fixed";
+    heart.style.left = `${x}px`;
+    heart.style.top = `${y}px`;
     heart.style.fontSize = `${Math.random() * 24 + 16}px`;
     heart.style.animation = `fly ${Math.random() * 3 + 2}s linear forwards`;
     heartsContainer.appendChild(heart);
