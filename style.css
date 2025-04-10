@@ -13,6 +13,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 
 .container {
@@ -74,6 +75,8 @@ body {
 
 .buttons {
   margin-top: 20px;
+  position: relative;
+  height: 60px;
 }
 
 button {
@@ -84,6 +87,7 @@ button {
   border-radius: 30px;
   cursor: pointer;
   transition: 0.3s ease;
+  position: relative;
 }
 
 #yesBtn {
@@ -99,7 +103,10 @@ button {
 #noBtn {
   background-color: #eeeeee;
   color: #333;
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .hearts {

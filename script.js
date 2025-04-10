@@ -2,16 +2,15 @@ const noBtn = document.getElementById('noBtn');
 const yesBtn = document.getElementById('yesBtn');
 const heartsContainer = document.getElementById('hearts');
 
-// Make the "No" button run away 😆
-noBtn.addEventListener('mouseover', () => {
-  const i = Math.floor(Math.random() * 300);
-  const j = Math.floor(Math.random() * 300);
-  noBtn.style.position = "absolute";
-  noBtn.style.left = `${i}px`;
-  noBtn.style.top = `${j}px`;
+// No button moves randomly on click
+noBtn.addEventListener('click', () => {
+  const x = Math.random() * (window.innerWidth - 100);
+  const y = Math.random() * (window.innerHeight - 50);
+  noBtn.style.left = `${x}px`;
+  noBtn.style.top = `${y}px`;
 });
 
-// Yes Button creates floating hearts 💖
+// Yes button creates heart animation
 yesBtn.addEventListener('click', () => {
   for(let i = 0; i < 20; i++) {
     const heart = document.createElement("div");
@@ -26,7 +25,7 @@ yesBtn.addEventListener('click', () => {
     setTimeout(() => heart.remove(), 5000);
   }
 
-  yesBtn.innerText = "Yayyy! You're my friend! 😍";
+  yesBtn.innerText = "Yayyy! You're my friend Sakshi! 🥳";
 });
 
 const style = document.createElement('style');
