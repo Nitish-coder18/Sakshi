@@ -2,7 +2,7 @@ const noBtn = document.getElementById('noBtn');
 const yesBtn = document.getElementById('yesBtn');
 const heartsContainer = document.getElementById('hearts');
 
-// "No" button click -> slightly move nearby
+// "No" button click -> move randomly within container
 noBtn.addEventListener('click', () => {
   const container = document.querySelector('.container');
   const offsetX = Math.random() * 60 - 30;
@@ -25,15 +25,16 @@ yesBtn.addEventListener('click', (e) => {
 
   for (let i = 0; i < 20; i++) {
     const heart = document.createElement("div");
-    heart.innerText = "💖";
+    heart.innerHTML = "<i class='fas fa-heart'></i>";
     heart.style.left = `${x}px`;
     heart.style.top = `${y}px`;
     heart.style.fontSize = `${Math.random() * 24 + 16}px`;
+    heart.style.color = "#ff4081";
     heart.style.animation = `fly ${Math.random() * 3 + 2}s linear forwards`;
     heartsContainer.appendChild(heart);
 
     setTimeout(() => heart.remove(), 5000);
   }
 
-  yesBtn.innerText = "Yayyy! You're my friend Sakshi! 🥳";
+  yesBtn.innerHTML = "<i class='fas fa-heart'></i> Yayyy Sakshi! 🥳";
 });
