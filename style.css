@@ -5,9 +5,11 @@
 
 #Main {
   background-color: aquamarine;
-  width: 70%;
+  width: 50vw;
   text-align: center;
   font-size: 40px;
+  border: 2px solid navy;
+  border-radius: 5px;
 }
 
 .btn {
