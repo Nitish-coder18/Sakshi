@@ -16,3 +16,8 @@
   padding: 10px;
   box-sizing: border-box;
 }
+
+.cat {
+  height: 120px;
+  width: 130px;
+}
